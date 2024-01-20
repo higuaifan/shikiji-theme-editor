@@ -1,0 +1,34 @@
+@import "shuimo-ui/dist/style.css";
+@import "theme/shuimo.theme.css";
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.max-border {
+  margin-top: 2.5px;
+  height: calc(100% - 5px);
+  width: calc(100% - 6px);
+}
+
+
+.code-pre {
+  span {
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.code-pre span {
+  cursor: var(--m-cursor-pointer);
+}
+
+
+.m-tag-cursor{
+  --m-cursor-auto: var(--m-cursor-pointer);
+
+}
