@@ -9,7 +9,7 @@
  */
 
 import ColorBlock from './ColorBlock.vue';
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 
 const props = defineProps<{
   themeMatches: any
@@ -23,23 +23,31 @@ const scope = computed(() => {
 });
 
 
+const tmVisibleRef = ref(false);
+const toggleVisible = () => {
+  tmVisibleRef.value = !tmVisibleRef.value;
+};
+
 </script>
 
 <template>
 
 
-  <div class="scope-theme-matches">
+  <div>
     <div class="tm-settings">
       <div v-if="!themeMatches.settings">
         {{ themeMatches.settings }}
       </div>
       <ColorBlock v-else :color="themeMatches.settings?.foreground"/>
     </div>
-    <ul class="tm-names">
-      <m-li v-for="s in scope">
-        {{ s }}
-      </m-li>
-    </ul>
+    <div class="tm-names-wrapper">
+      <m-button @click="toggleVisible">{{tmVisibleRef?'隐藏':'显示token'}}</m-button>
+      <ul class="tm-names" v-if="tmVisibleRef">
+        <m-li v-for="s in scope">
+          {{ s }}
+        </m-li>
+      </ul>
+    </div>
   </div>
 
 </template>

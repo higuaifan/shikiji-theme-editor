@@ -1,0 +1,453 @@
+{
+  "TypeScript": {},
+  "comment": {
+    "line": {
+      "shebang": {},
+      "double-slash": {},
+      "triple-slash": {
+        "directive": {}
+      }
+    },
+    "block": {
+      "documentation": {}
+    }
+  },
+  "punctuation": {
+    "definition": {
+      "comment": {},
+      "binding-pattern": {
+        "object": {},
+        "array": {}
+      },
+      "block": {},
+      "parameters": {
+        "begin": {},
+        "end": {}
+      },
+      "typeparameters": {
+        "begin": {},
+        "end": {}
+      },
+      "section": {
+        "case-statement": {}
+      },
+      "string": {
+        "begin": {},
+        "end": {},
+        "template": {
+          "begin": {},
+          "end": {}
+        }
+      },
+      "group": {
+        "regexp": {},
+        "assertion": {
+          "regexp": {}
+        },
+        "capture": {
+          "regexp": {}
+        }
+      },
+      "character-class": {
+        "regexp": {}
+      },
+      "template-expression": {
+        "begin": {},
+        "end": {}
+      },
+      "tag": {
+        "directive": {}
+      }
+    },
+    "destructuring": {},
+    "decorator": {},
+    "accessor": {},
+    "separator": {
+      "parameter": {},
+      "key-value": {},
+      "comma": {}
+    },
+    "terminator": {
+      "statement": {}
+    },
+    "whitespace": {
+      "comment": {
+        "leading": {}
+      }
+    }
+  },
+  "meta": {
+    "var": {
+      "expr": {}
+    },
+    "var-single-variable": {
+      "expr": {}
+    },
+    "object-binding-pattern-variable": {},
+    "array-binding-pattern-variable": {},
+    "expression": {},
+    "declaration": {},
+    "decorator": {},
+    "type": {
+      "declaration": {},
+      "annotation": {},
+      "paren": {
+        "cover": {}
+      },
+      "function": {
+        "return": {}
+      },
+      "tuple": {},
+      "parameters": {}
+    },
+    "enum": {
+      "declaration": {}
+    },
+    "namespace": {
+      "declaration": {}
+    },
+    "import-equals": {
+      "external": {},
+      "internal": {}
+    },
+    "brace": {
+      "round": {},
+      "square": {},
+      "angle": {}
+    },
+    "import": {},
+    "export": {
+      "default": {}
+    },
+    "block": {},
+    "class": {},
+    "object": {
+      "type": {},
+      "member": {}
+    },
+    "field": {
+      "declaration": {}
+    },
+    "method": {
+      "declaration": {}
+    },
+    "indexer": {
+      "declaration": {}
+    },
+    "function": {
+      "overload": {}
+    },
+    "objectliteral": {},
+    "parameter": {
+      "object-binding-pattern": {}
+    },
+    "paramter": {
+      "array-binding-pattern": {}
+    },
+    "return": {
+      "type": {
+        "arrow": {}
+      }
+    },
+    "parameters": {},
+    "object-literal": {
+      "key": {}
+    },
+    "arrow": {},
+    "group": {
+      "assertion": {
+        "regexp": {}
+      },
+      "regexp": {}
+    },
+    "assertion": {
+      "look-ahead": {
+        "regexp": {}
+      },
+      "negative-look-ahead": {
+        "regexp": {}
+      }
+    },
+    "template": {
+      "expression": {}
+    },
+    "array": {
+      "literal": {}
+    },
+    "delimiter": {
+      "decimal": {
+        "period": {}
+      }
+    },
+    "tag": {}
+  },
+  "keyword": {
+    "control": {
+      "export": {},
+      "trycatch": {},
+      "loop": {},
+      "flow": {},
+      "switch": {},
+      "conditional": {},
+      "with": {},
+      "import": {},
+      "require": {},
+      "as": {},
+      "default": {},
+      "from": {},
+      "new": {},
+      "anchor": {
+        "regexp": {}
+      }
+    },
+    "operator": {
+      "rest": {},
+      "ternary": {},
+      "assignment": {
+        "compound": {
+          "bitwise": {}
+        }
+      },
+      "spread": {},
+      "optional": {},
+      "new": {},
+      "type": {
+        "annotation": {}
+      },
+      "expression": {
+        "is": {},
+        "keyof": {},
+        "delete": {},
+        "in": {},
+        "of": {},
+        "instanceof": {},
+        "void": {},
+        "typeof": {}
+      },
+      "bitwise": {
+        "shift": {}
+      },
+      "comparison": {},
+      "relational": {},
+      "logical": {},
+      "decrement": {},
+      "increment": {},
+      "arithmetic": {},
+      "quantifier": {
+        "regexp": {}
+      },
+      "or": {
+        "regexp": {}
+      },
+      "negation": {
+        "regexp": {}
+      }
+    },
+    "generator": {
+      "asterisk": {}
+    },
+    "other": {
+      "debugger": {},
+      "back-reference": {
+        "regexp": {}
+      }
+    }
+  },
+  "storage": {
+    "type": {
+      "type": {},
+      "enum": {},
+      "namespace": {},
+      "class": {
+        "jsdoc": {}
+      },
+      "interface": {},
+      "property": {},
+      "function": {
+        "arrow": {}
+      }
+    },
+    "modifier": {
+      "async": {}
+    }
+  },
+  "entity": {
+    "name": {
+      "function": {
+        "tagged-template": {}
+      },
+      "type": {
+        "enum": {},
+        "module": {},
+        "class": {},
+        "instance": {
+          "jsdoc": {}
+        }
+      },
+      "tag": {
+        "directive": {}
+      }
+    },
+    "other": {
+      "inherited-class": {},
+      "attribute-name": {
+        "directive": {}
+      }
+    }
+  },
+  "variable": {
+    "other": {
+      "readwrite": {
+        "alias": {}
+      },
+      "enummember": {},
+      "object": {
+        "property": {}
+      },
+      "property": {},
+      "jsdoc": {}
+    },
+    "object": {
+      "property": {}
+    },
+    "parameter": {},
+    "language": {
+      "arguments": {},
+      "this": {},
+      "super": {}
+    }
+  },
+  "constant": {
+    "language": {
+      "import-export-all": {},
+      "boolean": {
+        "true": {},
+        "false": {}
+      },
+      "null": {},
+      "undefined": {},
+      "nan": {},
+      "infinity": {}
+    },
+    "other": {
+      "object": {
+        "property": {}
+      },
+      "property": {},
+      "character-class": {
+        "set": {
+          "regexp": {}
+        },
+        "range": {
+          "regexp": {}
+        },
+        "regexp": {}
+      }
+    },
+    "character": {
+      "numeric": {
+        "regexp": {}
+      },
+      "control": {
+        "regexp": {}
+      },
+      "escape": {
+        "backslash": {
+          "regexp": {}
+        }
+      }
+    },
+    "numeric": {
+      "hex": {},
+      "binary": {},
+      "octal": {},
+      "decimal": {}
+    }
+  },
+  "invalid": {
+    "illegal": {
+      "newline": {}
+    }
+  },
+  "support": {
+    "type": {
+      "primitive": {},
+      "builtin": {},
+      "object": {
+        "module": {}
+      }
+    },
+    "class": {
+      "builtin": {},
+      "error": {},
+      "console": {},
+      "dom": {},
+      "node": {}
+    },
+    "function": {
+      "math": {},
+      "console": {},
+      "json": {},
+      "process": {},
+      "event-handler": {},
+      "dom": {}
+    },
+    "constant": {
+      "math": {},
+      "property": {
+        "math": {}
+      },
+      "json": {},
+      "dom": {}
+    },
+    "variable": {
+      "property": {
+        "dom": {},
+        "process": {}
+      },
+      "dom": {},
+      "object": {
+        "process": {},
+        "node": {}
+      }
+    },
+    "module": {
+      "node": {}
+    }
+  },
+  "switch-expression": {
+    "expr": {}
+  },
+  "switch-block": {
+    "expr": {}
+  },
+  "case-clause": {
+    "expr": {}
+  },
+  "switch-statement": {
+    "expr": {}
+  },
+  "cast": {
+    "expr": {}
+  },
+  "new": {
+    "expr": {}
+  },
+  "string": {
+    "quoted": {
+      "double": {},
+      "single": {}
+    },
+    "regex": {},
+    "template": {}
+  },
+  "literal": {},
+  "other": {
+    "meta": {
+      "jsdoc": {}
+    },
+    "description": {
+      "jsdoc": {}
+    }
+  }
+}

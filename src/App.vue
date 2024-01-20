@@ -6,9 +6,12 @@ import Editor from './components/editor/Editor.vue';
 
 <template>
 
-  <m-rice-paper class="m-cursor">
+  <m-rice-paper class="m-cursor" :crane="false" :mountain="false">
     <div class="main">
-      <ShikijiViewer/>
+      <div class="demo-view">
+        <ShikijiViewer/>
+      </div>
+      <m-divider/>
       <Editor/>
     </div>
   </m-rice-paper>
@@ -21,10 +24,12 @@ import Editor from './components/editor/Editor.vue';
   width: 100vw;
 
   display: grid;
-  grid-template-rows: repeat(2, 50vh);
-  padding: 2rem;
+  grid-template-rows: 48vh 1rem 48vh;
+  padding: 2vh;
   box-sizing: border-box;
+}
 
-
+.demo-view {
+  overflow-y: auto;
 }
 </style>

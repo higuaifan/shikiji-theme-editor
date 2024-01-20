@@ -8,18 +8,19 @@
  * 江湖的业务千篇一律，复杂的代码好几百行。
  */
 import { onMounted, ref, watch } from 'vue';
-import { codeToThemedTokens, ThemedToken } from 'shikiji';
+import { codeToThemedTokens, ThemedToken, ThemeRegistration } from 'shikiji';
 import TokenDetails from './TokenDetails.vue';
+import CodeStore from '../../store/code.store.ts';
+import { storeToRefs } from 'pinia';
 
-const codeRef = ref(`import { createApp, ref } from 'vue'
 
-createApp({
-  setup() {
-    return {
-      count: ref(0)
-    }
-  }
-}).mount('#app')`);
+const props = defineProps<{
+  theme?: ThemeRegistration
+}>();
+
+const codeStore = CodeStore();
+const { codeRef } = storeToRefs(codeStore);
+
 const tokenHtml = ref('');
 const currentToken = ref();
 let nodesList: ThemedToken[][] = [];
@@ -27,7 +28,7 @@ const toTokens = async () => {
   nodesList = await codeToThemedTokens(codeRef.value, {
     lang: 'ts',
     includeExplanation: true,
-    theme: 'vitesse-dark'
+    theme: props.theme ?? 'vitesse-dark'
   });
 
   tokenHtml.value = nodesList.map((nodes, i) => {
@@ -65,43 +66,28 @@ const catchClickEvent = (e: MouseEvent) => {
 </script>
 
 <template>
-
-
-  <div class="shikiji-editor">
-
-    <div class="header">
-      <m-button @click="toTokens">toTokens</m-button>
-    </div>
-
+  <div class="shikiji-editor m-scroll">
     <div class="viewer-editor">
-      <div>
+      <div class="code-pre-wrapper">
         <pre class="code-pre" v-html="tokenHtml" @click="catchClickEvent"/>
       </div>
       <m-input type="textarea" v-model="codeRef"/>
       <div class="info">
-
         <TokenDetails :token="currentToken"/>
       </div>
     </div>
-
   </div>
-
-
 </template>
 
 <style scoped>
-
-.shikiji-editor {
-}
-
 .viewer-editor {
   display: grid;
   grid-template-columns: 1fr 1fr 700px;
+  overflow-y: auto;
 }
 
 .info {
   overflow-y: auto;
-  height: 50vh;
 }
 
 

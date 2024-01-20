@@ -1,13 +1,13 @@
 export const ts = `const func = function a (){};
 import _ from 'lodash';
-export declare interface MyInterface from './myClass';
+// export declare interface MyInterface from './myClass';
 export default MyClass;
 
 type MyFoo = MyInterface;
 type Types = keyof typeof types;
 
 const regexp = /foo/g;
-const func = function a (){};
+const a = '123321';
 
 // 写一行注释
 
@@ -62,3 +62,4 @@ enum MyEnum {
 export default SomeClass;
 module.exports = foo;
 `
+

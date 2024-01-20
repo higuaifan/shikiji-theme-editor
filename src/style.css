@@ -13,12 +13,14 @@ html, body {
 }
 
 
-.code-pre {
-  span {
-    opacity: 0.5;
+.demo-view {
+  .code-pre {
+    span {
+      opacity: 0.5;
 
-    &:hover {
-      opacity: 1;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 }
@@ -27,8 +29,14 @@ html, body {
   cursor: var(--m-cursor-pointer);
 }
 
+.shikiji-editor {
+  overflow-y: auto;
+}
 
-.m-tag-cursor{
+.m-tag-cursor {
   --m-cursor-auto: var(--m-cursor-pointer);
+}
 
+.code-pre-wrapper {
+  overflow-y: auto;
 }

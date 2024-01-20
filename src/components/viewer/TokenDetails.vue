@@ -12,28 +12,18 @@ import ThemeMatchesItem from './ThemeMatchesItem.vue';
 import ColorBlock from './ColorBlock.vue';
 import { computed } from 'vue';
 import { MMessage } from 'shuimo-ui';
+import { compareColor } from '../../compositions/color.ts';
 
 const props = defineProps<{
   token: ThemedToken
 }>();
 
 
-const compareColor = (color1: string | undefined, color2: string | undefined) => {
-  if (!color1 || !color2) {
-    return Infinity;
-  }
-  // 默认color都是十六进制
-  const c16_1 = color1.replace('#', '');
-  const c16_2 = color2.replace('#', '');
-  const c = { r: c16_1.slice(0, 2), g: c16_1.slice(2, 4), b: c16_1.slice(4, 6), a: c16_1.slice(6, 8) };
-  const c2 = { r: c16_2.slice(0, 2), g: c16_2.slice(2, 4), b: c16_2.slice(4, 6), a: c16_2.slice(6, 8) };
-  const cNum1 = parseInt(c.r + c.g + c.b + c.a, 16);
-  const cNum2 = parseInt(c2.r + c2.g + c2.b + c2.a, 16);
-  return Math.abs(cNum1 - cNum2);
-};
+
 
 const tokenExplanation = computed(() => {
   const tokenColor = props.token.color;
+  console.log(props.token);
   if (!tokenColor) {
     return props.token.explanation;
   }
@@ -96,19 +86,21 @@ const copyScopeName = (scopeName: string) => {
     <h1>explanations</h1>
     <div class="explanations">
       <div class="explanation" v-for="e in tokenExplanation">
-      <div class="content">
-        <m-li active> <strong>{{ e.content }}</strong> </m-li>
-      </div>
-      <div class="scopes" v-for="s in e.scopes">
-          <div class="scope-title">
-            <m-tag class="m-tag-cursor"
-                   :style="{'--m-tag-bg': s.topColor}" @click="copyScopeName(s.scopeName)">
-              <!--              scope:-->
-              {{ s.scopeName }}
-            </m-tag>
+        <div class="content">
+          <m-li active><strong>{{ e.content }}</strong></m-li>
+        </div>
+        <div class="scopes" v-for="s in e.scopes">
+          <div class="scope-inside">
+            <div class="scope-title">
+              <m-tag class="m-tag-cursor"
+                     :style="{'--m-tag-bg': s.topColor}" @click="copyScopeName(s.scopeName)">
+                <!--              scope:-->
+                {{ s.scopeName }}
+              </m-tag>
 
+            </div>
+            <ThemeMatchesItem :theme-matches="m" v-for="m in s.themeMatches"/>
           </div>
-          <ThemeMatchesItem :theme-matches="m" v-for="m in s.themeMatches"/>
           <m-divider/>
         </div>
       </div>
