@@ -1,18 +1,14 @@
-# Vue 3 + TypeScript + Vite
+# Shikiji-theme-editor
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+我想给水墨加一个代码主题，
+但是我发现theme相当晦涩，并且如果`clone`一个主题，替换全部颜色的话，某些个性化的需求也会比较难以实现。
+因此我写了一个小工具，以简化theme的编辑，
+当然他存在相当多的不足，我会慢慢完善的。
 
-## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support For `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+I want to add a code theme to `Shuimo Design`,
+However, I find that the theme is quite obscure,
+and if you clone a theme and replace all colors, 
+it will be difficult to achieve certain personalized needs.
+So I wrote a small tool to simplify theme editing.
+Of course, it has quite a few shortcomings, and I will gradually improve them.
