@@ -1,7 +1,6 @@
 :root{
   --m-skj-bg: white;
   --m-skj-main: var(--m-color-main);
-  --m-skj-main2: rgba(134, 23, 23, 0.36);
 
   --m-skj-keyword-operator: var(--m-color-success);
   --m-skj-keyword-other: var(--m-color-warn);
@@ -10,19 +9,16 @@
 
   --m-skj-entity: var(--m-color-main);
   --m-skj-entity-warn: var(--m-color-warn);
-  --m-skj-entity-impl2: #958563;
-
-
   --m-skj-control: var(--m-color-pink);
   --m-skj-variable: var(--m-color-text);
   --m-skj-operator: var(--m-color-warn);
-  --m-skj-punctuation: #06453e;
 
 
   --m-skj-empty: white;
 
 
   /*重新整理部分*/
+  --m-skj-punctuation: #06453e;
   --m-skj-text: #74787a;
   --m-skj-regexp: #1a6840;
   --m-skj-type: #a98003;
@@ -31,10 +27,11 @@
   --m-skj-func: #9b7503;
   --m-skj-property: #326863;
   --m-skj-constant: #06453e;
-  --m-skj-entity-impl: #e5cd89;
+  --m-skj-entity-impl: #f8cb46;
   --m-skj-keyword: var(--m-color-blue);
   --m-skj-debugger: #E8B004FF;
   --m-skj-doc-param: #8abcd1;
+  --m-skj-vue: #42b883;
 
 }
 
@@ -42,4 +39,6 @@ html[dark]{
   --m-skj-bg: black;
   --m-skj-main: var(--m-color-main);
 
+
+  --m-skj-entity-impl: #e5cd89;
 }

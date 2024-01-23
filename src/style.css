@@ -4,12 +4,42 @@
 html, body {
   padding: 0;
   margin: 0;
+  font-size: 10px;
+
+  --pre-bg-color: var(--m-color-background);
+}
+
+html[dark] {
+  --pre-bg-color: rgba(203, 209, 227, 0.13);
 }
 
 .max-border {
   margin-top: 2.5px;
   height: calc(100% - 5px);
   width: calc(100% - 6px);
+}
+
+.code-pre {
+  background: var(--pre-bg-color);
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 1.2em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 2px;
 }
 
 

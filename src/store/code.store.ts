@@ -7,13 +7,14 @@
  * 江湖的业务千篇一律，复杂的代码好几百行。
  */
 import { defineStore } from 'pinia';
-import { ts } from '../components/editor/code/ts.ts';
+// import { ts } from '../components/editor/code/ts.ts';
+import { vue } from '../components/editor/code/vue.ts';
 import { ref } from 'vue';
 
 
 export default defineStore('code', () => {
 
-  const codeRef = ref(ts);
+  const codeRef = ref(vue);
 
 
   return {

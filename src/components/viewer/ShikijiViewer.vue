@@ -26,14 +26,19 @@ const currentToken = ref();
 let nodesList: ThemedToken[][] = [];
 const toTokens = async () => {
   nodesList = await codeToThemedTokens(codeRef.value, {
-    lang: 'ts',
+    lang: 'vue',
     includeExplanation: true,
     theme: props.theme ?? 'vitesse-dark'
   });
 
   tokenHtml.value = nodesList.map((nodes, i) => {
     return nodes.map((node, j) => {
-      return `<span class="token" style="color:${node.color}" data-index="${i}-${j}">${node.content}</span>`;
+      const content = node.content
+        .replaceAll('{', '&#123;')
+        .replaceAll('}', '&#125;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('<', '&lt;');
+      return `<span class="token" style="color:${node.color}" data-index="${i}-${j}">${content}</span>`;
     }).join('');
   }).join('<br/>');
 

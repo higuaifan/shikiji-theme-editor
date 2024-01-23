@@ -6,7 +6,10 @@ import Editor from './components/editor/Editor.vue';
 
 <template>
 
-  <m-rice-paper class="m-cursor" :crane="false" :mountain="false">
+  <m-rice-paper class="full m-cursor" :crane="false">
+    <div class="header">
+      <m-dark-mode/>
+    </div>
     <div class="main">
       <div class="demo-view">
         <ShikijiViewer/>
@@ -19,6 +22,22 @@ import Editor from './components/editor/Editor.vue';
 </template>
 
 <style scoped>
+
+.header {
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 1rem 2rem 0 0 ;
+  box-sizing: border-box;
+  top: 0;
+}
+
+.full {
+  height: 100vh;
+  width: 100vw;
+}
+
 .main {
   height: 100vh;
   width: 100vw;
