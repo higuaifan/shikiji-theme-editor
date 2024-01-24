@@ -14,6 +14,9 @@ const tokenColors = themeTransform({
   comment: {
     line: {
       'double-slash': 'comment'
+    },
+    block: {
+      mVal: 'comment'
     }
   },
   punctuation: {
@@ -24,8 +27,11 @@ const tokenColors = themeTransform({
         tag: {
           jsdoc: 'comment'
         }
-      }
-      // parameters: 'text'
+      },
+      parameters: 'text'
+    },
+    separator: {
+      'key-value': 'text'
     }
   },
   meta: {
@@ -46,8 +52,11 @@ const tokenColors = themeTransform({
       }
     },
     other: {
-      mVal:'entity-impl',
-      'attribute-name': 'type'
+      mVal: 'entity-impl',
+      'attribute-name': {
+        mVal: 'type',
+        class: 'func'
+      }
     }
   },
   keyword: {
@@ -58,7 +67,9 @@ const tokenColors = themeTransform({
     },
     operator: {
       mVal: 'keyword',
-      operator: 'keyword-operator'
+      operator: 'keyword-operator',
+      expression: 'main',
+      logical: 'main'
     },
     other: {
       mVal: 'keyword-operator',
@@ -71,7 +82,8 @@ const tokenColors = themeTransform({
       property: 'property',
       readwrite: {
         alias: 'value'
-      }
+      },
+      enummember: 'value'
     },
     language: 'main'
   },
@@ -97,18 +109,40 @@ const tokenColors = themeTransform({
       'unrecognized-tag': 'value'
     }
   },
-  text:{
-    html:{
-      derivative: 'keyword'
+  text: {
+    html: {
+      derivative: 'text'
     }
   }
 });
 
-console.log(JSON.stringify(tokenColors));
+
+// 偷个懒
+const token: ThemeRegistration['tokenColors'] = [];
+const colorMap = new Map<string, string[]>();
+tokenColors.forEach(item => {
+  const color = item.settings.foreground;
+  const { scope } = item;
+  if (color) {
+    colorMap.set(color,
+      colorMap.get(color) ? [...colorMap.get(color), scope] : [scope]);
+  }
+});
+
+[...colorMap.keys()].forEach(c => {
+  const scopes = colorMap.get(c);
+  token.push({
+    scope: scopes,
+    settings: { foreground: c }
+  });
+});
+const slimColor = token;
+console.log(JSON.stringify(slimColor));// 压缩版
+
 
 export const ShuimoTheme: ThemeRegistration = {
   name: 'shuimo',
-  tokenColors
+  tokenColors: slimColor
 };
 
 

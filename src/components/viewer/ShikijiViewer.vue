@@ -56,7 +56,6 @@ onMounted(() => {
 const showTokenInfo = (el: HTMLElement) => {
   const [i, j] = el.getAttribute('data-index')!.split('-').map(e => Number(e));
   const token = nodesList[i][j];
-  console.log(token);
   currentToken.value = token;
 };
 

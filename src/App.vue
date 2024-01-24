@@ -1,7 +1,6 @@
 <script setup lang="ts">
 
-import ShikijiViewer from './components/viewer/ShikijiViewer.vue';
-import Editor from './components/editor/Editor.vue';
+import CodeViewer from './components/CodeViewer.vue';
 </script>
 
 <template>
@@ -11,11 +10,9 @@ import Editor from './components/editor/Editor.vue';
       <m-dark-mode/>
     </div>
     <div class="main">
-      <div class="demo-view">
-        <ShikijiViewer/>
-      </div>
-      <m-divider/>
-      <Editor/>
+
+      <CodeViewer/>
+
     </div>
   </m-rice-paper>
 
@@ -28,9 +25,10 @@ import Editor from './components/editor/Editor.vue';
   width: 100vw;
   display: flex;
   flex-direction: row-reverse;
-  padding: 1rem 2rem 0 0 ;
+  padding: 1rem 2rem 0 0;
   box-sizing: border-box;
   top: 0;
+  height: 43px;
 }
 
 .full {
@@ -39,12 +37,13 @@ import Editor from './components/editor/Editor.vue';
 }
 
 .main {
-  height: 100vh;
+  height: calc(100vh - 43px);
   width: 100vw;
 
   display: grid;
   grid-template-rows: 48vh 1rem 48vh;
-  padding: 2vh;
+  padding: 1rem;
+  margin-top: 43px;
   box-sizing: border-box;
 }
 
